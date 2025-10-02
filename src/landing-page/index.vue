@@ -13,7 +13,6 @@
         <nav class="hidden md:flex items-center gap-12 text-gray-700 text-sm">
           <a v-for="item in navItems" :key="item.id" :href="item.href" @click="setActive(item.id)"
             class="hover:text-blue-600" :class="{ 'text-[#6047ff] font-semibold': activeLink === item.id }">
-            
             {{ t(item.label) }}
           </a>
         </nav>
