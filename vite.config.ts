@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [vue()],
     server: {
-      port: 5173,
+      port: env.DEV_PORT || 5100,
       host: true, 
     },
     define: {
