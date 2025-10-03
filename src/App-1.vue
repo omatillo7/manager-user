@@ -12,7 +12,7 @@
         <!-- Menu (Desktop) -->
         <nav class="hidden md:flex items-center gap-12 text-gray-700 text-sm">
           <a v-for="item in navItems" :key="item.id" :href="item.href" @click="setActive(item.id)"
-            class="hover:text-blue-600" :class="{ 'text-[#6047ff] font-semibold': activeLink === item.id }">
+            class="hover:text-blue-600" :class="{ 'text-[#9657ff] font-semibold': activeLink === item.id }">
             {{ t(item.label) }}
           </a>
         </nav>
@@ -37,7 +37,7 @@
           <div class="hidden md:flex items-center gap-4">
             <HomeLanguageSelect />
             <button
-              class="bg-[#6047ff] text-white px-4 py-1.5 rounded shadow hover:bg-[#5135ff] flex items-center gap-2">
+              class="bg-[#9657ff] text-white px-4 py-1.5 rounded shadow hover:bg-[#7a3de6] flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" />
               </svg>
@@ -54,21 +54,21 @@
            flex flex-col px-6 py-6 space-y-6 transform transition-transform duration-300">
           <!-- Menu Items -->
           <a href="#home" @click="isMenuOpen = false"
-            class="block text-gray-700 hover:text-[#6047ff] text-lg font-medium">{{
+            class="block text-gray-700 hover:text-[#9657ff] text-lg font-medium">{{
               t("home") }}</a>
           <a href="#news" @click="isMenuOpen = false"
-            class="block text-gray-700 hover:text-[#6047ff] text-lg font-medium">{{
+            class="block text-gray-700 hover:text-[#9657ff] text-lg font-medium">{{
               t("news") }}</a>
           <a href="#stats" @click="isMenuOpen = false"
-            class="block text-gray-700 hover:text-[#6047ff] text-lg font-medium">{{
+            class="block text-gray-700 hover:text-[#9657ff] text-lg font-medium">{{
               t("stats") }}</a>
           <a href="#links" @click="isMenuOpen = false"
-            class="block text-gray-700 hover:text-[#6047ff] text-lg font-medium">{{
+            class="block text-gray-700 hover:text-[#9657ff] text-lg font-medium">{{
               t("links") }}</a>
 
           <div class="border-t border-gray-200">
             <button
-              class="mt-4 bg-[#6047ff] text-white px-4 py-2 rounded shadow hover:bg-[#5135ff] flex items-center gap-2 w-full justify-center">
+              class="mt-4 bg-[#9657ff] text-white px-4 py-2 rounded shadow hover:bg-[#7a3de6] flex items-center gap-2 w-full justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" />
               </svg>
@@ -95,7 +95,7 @@
         <!-- Text -->
         <div class="space-y-6 font-[Helvetica Neue] italic">
           <h2 class="text-2xl md:text-3xl font-serif font-bold leading-relaxed tracking-wide py-12 -mt-20">
-            <span class="text-[#6047ff]">{{ t("part1") }}</span>
+            <span class="text-[#9657ff]">{{ t("part1") }}</span>
             <span class="text-gray-800"> - {{ t("part2") }}</span>
           </h2>
           <p class="text-gray-600 italic">
@@ -114,7 +114,7 @@
     <!-- News Section -->
     <section id="news" class="bg-gray-50 py-12 border-y border-gray-300">
       <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl font-serif font-bold mb-8 text-[#6047ff] italic">
+        <h2 class="text-3xl font-serif font-bold mb-8 text-[#9657ff] italic">
           {{ t("news") }}
         </h2>
         <div class="grid md:grid-cols-4 gap-6">
@@ -129,7 +129,7 @@
             </p>
             <!-- <a
               href="#"
-              class="mt-4 text-[#6047ff] hover:underline text-sm font-medium"
+              class="mt-4 text-[#9657ff] hover:underline text-sm font-medium"
             >
               Batafsil →
             </a> -->
@@ -142,7 +142,7 @@
       <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
         <!-- Chap taraf: statistika -->
         <div class="w-full lg:w-1/2">
-          <h2 class="text-3xl font-serif font-bold mb-10 text-[#6047ff] italic">
+          <h2 class="text-3xl font-serif font-bold mb-10 text-[#9657ff] italic">
             {{ t("stats") }}
           </h2>
 
@@ -151,7 +151,7 @@
             <div
               class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition">
               <img src="../src/assets/img/application.png" alt="icon" class="w-16 h-16" />
-              <div class="text-[#6047ff] text-2xl font-bold mt-3">10344</div>
+              <div class="text-[#9657ff] text-2xl font-bold mt-3">10344</div>
               <div class="text-gray-600 text-sm">
                 {{ t("sent_applications") }}
               </div>
@@ -160,7 +160,7 @@
             <div
               class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition">
               <img src="../src/assets/img/accepted.png" alt="icon" class="w-14 h-14" />
-              <div class="text-[#6047ff] text-2xl font-bold mt-3">654</div>
+              <div class="text-[#9657ff] text-2xl font-bold mt-3">654</div>
               <div class="text-gray-600 text-sm">
                 {{ t("accepted_applications") }}
               </div>
@@ -169,7 +169,7 @@
             <div
               class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition">
               <img src="../src/assets/img/rejected.png" alt="icon" class="w-14 h-14" />
-              <div class="text-[#6047ff] text-2xl font-bold mt-3">3244</div>
+              <div class="text-[#9657ff] text-2xl font-bold mt-3">3244</div>
               <div class="text-gray-600 text-sm">
                 {{ t("rejected_applications") }}
               </div>
@@ -178,7 +178,7 @@
             <div
               class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition">
               <img src="../src/assets/img/contract.png" alt="icon" class="w-14 h-14" />
-              <div class="text-[#6047ff] text-2xl font-bold mt-3">13814</div>
+              <div class="text-[#9657ff] text-2xl font-bold mt-3">13814</div>
               <div class="text-gray-600 text-sm">{{ t("get_contracts") }}</div>
             </div>
           </div>
@@ -193,7 +193,7 @@
     <!-- Carousel -->
     <section id="links" class="py-12 bg-gray-50 border-y border-gray-300">
       <div class="px-4 sm:px-6 md:px-8">
-        <h2 class="text-2xl sm:text-3xl font-serif font-bold italic mb-8 text-center text-[#6047ff]">
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold italic mb-8 text-center text-[#9657ff]">
           {{ t("usefull_links") }}
         </h2>
 
@@ -219,7 +219,7 @@
   <!-- section FAQ -->
   <section class="py-16 px-4 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
-      <h1 class="text-3xl font-serif font-bold italic text-center mb-8 text-[#6047ff] text-start">
+      <h1 class="text-3xl font-serif font-bold italic text-center mb-8 text-[#9657ff] text-start">
         {{ t("faq") }}
       </h1>
 
@@ -307,7 +307,7 @@
   </footer>
 
   <button v-show="showScrollTop" @click="scrollToTop"
-    class="fixed bottom-6 right-6 bg-[#6047ff] text-white p-3 rounded-full shadow-lg hover:bg-[#5135ff] transition">
+    class="fixed bottom-6 right-6 bg-[#9657ff] text-white p-3 rounded-full shadow-lg hover:bg-[#7a3de6] transition">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
     </svg>

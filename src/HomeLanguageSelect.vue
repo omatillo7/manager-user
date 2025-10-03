@@ -15,7 +15,7 @@
                 <li v-for="lang in languages" :key="lang.code" @click="setLanguage(lang.code)"
                     class="flex items-center gap-2 px-3 py-2 cursor-pointer text-sm transition-colors" :class="[
                         lang.code === currentLang
-                            ? 'bg-[#6047ff] text-white font-semibold'   // active
+                            ? 'bg-[#9657ff] text-white font-semibold'   // active
                             : 'text-gray-700 hover:bg-gray-200'        // faqat active bo‘lmaganlarga hover
                     ]">
                     <span :class="`fis fi-${getFlag(lang.code)}`" class="w-4 h-4 rounded-full"></span>

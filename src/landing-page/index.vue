@@ -12,7 +12,7 @@
         <!-- Menu (Desktop) -->
         <nav class="hidden md:flex items-center gap-12 text-gray-700 text-sm">
           <a v-for="item in navItems" :key="item.id" :href="item.href" @click="setActive(item.id)"
-            class="hover:text-blue-600" :class="{ 'text-[#6047ff] font-semibold': activeLink === item.id }">
+            class="hover:text-[#7a3de6]" :class="{ 'text-[#9657ff] font-semibold': activeLink === item.id }">
             {{ t(item.label) }}
           </a>
         </nav>
@@ -37,7 +37,7 @@
           <div class="hidden md:flex items-center gap-4">
             <HomeLanguageSelect />
             <button
-              class="bg-[#6047ff] text-white px-4 py-1.5 rounded shadow hover:bg-[#5135ff] flex items-center gap-2">
+              class="bg-[#9657ff] text-white px-4 py-1.5 rounded shadow hover:bg-[#7a3de6] flex items-center gap-2">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" />
               </svg>
@@ -55,27 +55,27 @@
           <!-- Menu Items -->
           <a href="#home" @click="activeSection = 'home'; isMenuOpen = false" :class="[
             'block text-lg font-medium transition-colors',
-            activeSection === 'home' ? 'text-[#6047ff]' : 'text-gray-700 hover:text-[#6047ff]'
+            activeSection === 'home' ? 'text-[#9657ff]' : 'text-gray-700 hover:text-[#9657ff]'
           ]">{{ t('home') }}</a>
 
           <a href="#news" @click="activeSection = 'news'; isMenuOpen = false" :class="[
             'block text-lg font-medium transition-colors',
-            activeSection === 'news' ? 'text-[#6047ff]' : 'text-gray-700 hover:text-[#6047ff]'
+            activeSection === 'news' ? 'text-[#9657ff]' : 'text-gray-700 hover:text-[#9657ff]'
           ]">{{ t('news') }}</a>
 
           <a href="#stats" @click="activeSection = 'stats'; isMenuOpen = false" :class="[
             'block text-lg font-medium transition-colors',
-            activeSection === 'stats' ? 'text-[#6047ff]' : 'text-gray-700 hover:text-[#6047ff]'
+            activeSection === 'stats' ? 'text-[#9657ff]' : 'text-gray-700 hover:text-[#9657ff]'
           ]">{{ t('stats') }}</a>
 
           <a href="#links" @click="activeSection = 'links'; isMenuOpen = false" :class="[
             'block text-lg font-medium transition-colors',
-            activeSection === 'links' ? 'text-[#6047ff]' : 'text-gray-700 hover:text-[#6047ff]'
+            activeSection === 'links' ? 'text-[#9657ff]' : 'text-gray-700 hover:text-[#9657ff]'
           ]">{{ t('links') }}</a>
 
           <!-- Button -->
           <div class="border-t border-gray-200 pt-4">
-            <button class="mt-2 bg-[#6047ff] text-white px-4 py-2 rounded shadow hover:bg-[#5135ff] 
+            <button class="mt-2 bg-[#9657ff] text-white px-4 py-2 rounded shadow hover:bg-[#7a3de6] 
                  flex items-center gap-2 w-full justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" />
@@ -103,7 +103,7 @@
         <!-- Text -->
         <div class="space-y-6 font-[Helvetica Neue] italic">
           <h2 class="text-2xl md:text-3xl font-serif font-bold leading-relaxed tracking-wide py-12 -mt-20">
-            <span class="text-[#6047ff]">{{ t("part1") }}</span>
+            <span class="text-[#9657ff]">{{ t("part1") }}</span>
             <span class="text-gray-800"> - {{ t("part2") }}</span>
           </h2>
           <p class="text-gray-600 italic">
@@ -122,7 +122,7 @@
     <!-- News Section -->
     <section id="news" class="bg-gray-50 py-12 border-y border-gray-300">
       <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl font-serif font-bold mb-8 text-[#6047ff] italic">
+        <h2 class="text-3xl font-serif font-bold mb-8 text-[#9657ff] italic">
           {{ t("news") }}
         </h2>
 
@@ -141,7 +141,7 @@
         <!-- Replace your old div with this -->
         <div v-if="newsList.length > 4" class="mt-6 text-center flex items-center justify-center gap-2">
           <button @click="showMore = !showMore"
-            class="px-3 gap-2 py-2 bg-[#6047ff] flex d-flex text-white rounded hover:bg-[#4a36cc] transition" aria-expanded="false">
+            class="px-3 gap-2 py-2 bg-[#9657ff] flex d-flex text-white rounded hover:bg-[#7a3de6] transition" aria-expanded="false">
             {{ showMore ? t("close") : t("allNews") }}
              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
             class="w-6 h-6 transform transition-transform duration-300 text-[#ffff]"
@@ -161,7 +161,7 @@
       <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
         <!-- Chap taraf: statistika -->
         <div class="w-full lg:w-1/2">
-          <h2 class="text-3xl font-serif font-bold mb-10 text-[#6047ff] italic">
+          <h2 class="text-3xl font-serif font-bold mb-10 text-[#9657ff] italic">
             {{ t("stats") }}
           </h2>
 
@@ -170,7 +170,7 @@
             <div
               class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition">
               <img src="../assets/img/application.png" alt="icon" class="w-16 h-16" />
-              <div class="text-[#6047ff] text-2xl font-bold mt-3">
+              <div class="text-[#9657ff] text-2xl font-bold mt-3">
                 {{ stats?.totalSeen ?? "..." }}
               </div>
               <div class="text-gray-600 text-sm">
@@ -181,7 +181,7 @@
             <div
               class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition">
               <img src="../assets/img/accepted.png" alt="icon" class="w-14 h-14" />
-              <div class="text-[#6047ff] text-2xl font-bold mt-3">
+              <div class="text-[#9657ff] text-2xl font-bold mt-3">
                 {{ stats?.totalAccepted ?? "..." }}
               </div>
               <div class="text-gray-600 text-sm">
@@ -192,7 +192,7 @@
             <div
               class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition">
               <img src="../assets/img/rejected.png" alt="icon" class="w-14 h-14" />
-              <div class="text-[#6047ff] text-2xl font-bold mt-3">
+              <div class="text-[#9657ff] text-2xl font-bold mt-3">
                 {{ stats?.totalCancelled ?? "..." }}
               </div>
               <div class="text-gray-600 text-sm">
@@ -203,7 +203,7 @@
             <div
               class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition">
               <img src="../assets/img/contract.png" alt="icon" class="w-14 h-14" />
-              <div class="text-[#6047ff] text-2xl font-bold mt-3">
+              <div class="text-[#9657ff] text-2xl font-bold mt-3">
                 {{ stats?.totalContract ?? "..." }}
               </div>
               <div class="text-gray-600 text-sm">
@@ -222,7 +222,7 @@
     <!-- Carousel -->
     <section id="links" class="py-12 bg-gray-50 border-y border-gray-300">
       <div class="px-4 sm:px-6 md:px-8">
-        <h2 class="text-2xl sm:text-3xl font-serif font-bold italic mb-8 text-center text-[#6047ff]">
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold italic mb-8 text-center text-[#9657ff]">
           {{ t("usefull_links") }}
         </h2>
 
@@ -249,7 +249,7 @@
     <section class="py-16 px-4 bg-gray-50 transition-colors duration-300">
       <div class="max-w-6xl mx-auto px-6">
         <!-- Sarlavha -->
-        <h1 class="text-3xl sm:text-3xl font-serif font-bold italic text-[#6047ff] mb-10 text-center">
+        <h1 class="text-3xl sm:text-3xl font-serif font-bold italic text-[#9657ff] mb-10 text-center">
           {{ t("faq") }}
         </h1>
 
@@ -261,7 +261,7 @@
             <button @click="toggle(index)"
               class="w-full px-6 py-5 flex justify-between items-center text-left text-lg sm:text-xl font-medium text-gray-800 transition-colors duration-300">
               <span class="flex items-center gap-3">
-                <span class="text-xl font-bold text-[#6047ff] transition-transform duration-300"
+                <span class="text-xl font-bold text-[#9657ff] transition-transform duration-300"
                   :class="{ 'rotate-180': activeIndex === index }">
                   {{ activeIndex === index ? "+" : "-" }}
                 </span>
@@ -349,7 +349,7 @@
     </footer>
 
     <button v-show="showScrollTop" @click="scrollToTop"
-      class="fixed bottom-6 right-6 bg-[#6047ff] text-white p-3 rounded-full shadow-lg hover:bg-[#5135ff] transition">
+      class="fixed bottom-6 right-6 bg-[#9657ff] text-white p-3 rounded-full shadow-lg hover:bg-[#7a3de6] transition">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
       </svg>
