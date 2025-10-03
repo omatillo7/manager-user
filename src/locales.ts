@@ -119,8 +119,10 @@ export const messages = {
     title3: "O'zbekiston, Toshkent, Shayxontohur tumani, Navoiy kuchasi, 2A-uy",
     title4:
       "A.AVLONI NOMIDAGI PEDAGOGLARNI KASBIY RIVOJLANTIRISH VA YANGI O‘QITISH METODOLOGIYALARINI O‘RGATISH BO‘YICHA MILLIY TADQIQOT INSTITUTI",
-      usefull_links: "Foydali havolalar",
-      faq: "Tez-tez so'raladigan savollar (FAQ)"
+    usefull_links: "Foydali havolalar",
+    faq: "Tez-tez so'raladigan savollar (FAQ)",
+    allNews: "Barcha yangiliklar",
+    close: "Yopish",
   },
   ru: {
     personalInfo: "Личные данные",
@@ -240,8 +242,10 @@ export const messages = {
     title3: "Узбекистан, Ташкент, Шайхантахурский район, улица Навои, дом 2А",
     title4:
       "НАЦИОНАЛЬНЫЙ ИССЛЕДОВАТЕЛЬСКИЙ ИНСТИТУТ ПРОФЕССИОНАЛЬНОГО РАЗВИТИЯ И ОБУЧЕНИЯ НОВЫМ МЕТОДИКАМ ПРЕПОДАВАНИЯ ИМ. А.АВЛОНИ",
-      usefull_links: "Полезные ссылки",
-      faq: "Часто задаваемые вопросы (FAQ)",
+    usefull_links: "Полезные ссылки",
+    faq: "Часто задаваемые вопросы (FAQ)",
+    allNews: "Все новости",
+    close: "Закрыть",
   },
   en: {
     personalInfo: "Personal Information",
@@ -361,7 +365,9 @@ export const messages = {
       "Uzbekistan, Tashkent, Shaykhontohur District, Navoi Street, House 2A",
     title4:
       "NATIONAL RESEARCH INSTITUTE OF PROFESSIONAL DEVELOPMENT AND TEACHING NEW METHODOLOGIES TO TEACHERS NAMED AFTER A.AVLONI",
-      usefull_links: "Useful links",
-      faq: "Often asked questions (FAQ)",
+    usefull_links: "Useful links",
+    faq: "Often asked questions (FAQ)",
+    allNews: "All news",
+    close: "Close",
   },
 };

@@ -138,12 +138,20 @@
         </div>
 
         <!-- Ko‘proq tugma -->
-        <div v-if="newsList.length > 4" class="mt-6 text-center">
+        <!-- Replace your old div with this -->
+        <div v-if="newsList.length > 4" class="mt-6 text-center flex items-center justify-center gap-2">
           <button @click="showMore = !showMore"
-            class="px-6 py-2 bg-[#6047ff] text-white rounded hover:bg-[#4a36cc] transition">
-            {{ showMore ? "Yopish" : "Barcha yangiliklar" }}
+            class="px-3 gap-2 py-2 bg-[#6047ff] flex d-flex text-white rounded hover:bg-[#4a36cc] transition" aria-expanded="false">
+            {{ showMore ? t("close") : t("allNews") }}
+             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            class="w-6 h-6 transform transition-transform duration-300 text-[#ffff]"
+            :class="showMore ? 'rotate-180' : ''" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
           </button>
         </div>
+
       </div>
     </section>
 
@@ -281,7 +289,7 @@
         <!-- Maktabgacha va maktab taʼlimi vazirligi -->
         <div class="space-y-2">
           <div class="flex items-center gap-2">
-            <img src="../../src/assets/img/logo.png" alt="Logo" class="w-40 md:w-full object-contain" />
+            <img src="../../src/assets/img/header_logo.svg" alt="Logo" class="w-40 md:w-full object-contain" />
           </div>
           <p class="text-white/80 text-sm">
             {{ t("title3") }}
@@ -291,10 +299,13 @@
         <!-- Avloni instituti -->
         <div class="space-y-2">
           <div class="flex items-start gap-2">
-            <img src="../../src/assets/img/avloniy.png" alt="Avloni Logo" class="w-10 h-10 flex-shrink-0" />
+            <img src="../assets/img/uzeduen.svg" alt="" class="w-40 md:w-full object-contain">
+            <!-- <img src="../assets/img/uzeduen.svg" alt="" class="w-40 md:w-full object-contain">
+            <img src="../assets/img/uzeduen.svg" alt="" class="w-40 md:w-full object-contain"> -->
+            <!-- <img src="../../src/assets/img/avloniy.png" alt="Avloni Logo" class="w-12 h-12 flex-shrink-0" />
             <p class="text-[10px] leading-tight">
               {{ t("title4") }}
-            </p>
+            </p> -->
           </div>
           <p class="text-white/80 text-xs">
             {{ t("title2") }}
