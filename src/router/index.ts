@@ -8,6 +8,11 @@ const routes = [
     component: import("../landing-page/index.vue"),
   },
   {
+    path: "/auth/one-id",
+    name: "one-id",
+    component: import("../views/auth-one-id.vue"),
+  },
+  {
     path: "/admin",
     name: "admin",
     component: import("../layouts/MainLayout.vue"),

@@ -38,7 +38,7 @@
           class="lg:hidden flex items-center gap-3 px-4 py-3 rounded-lg transition-colors duration-200
          text-purple-600 hover:bg-purple-100 hover:text-purple-800
          dark:text-purple-400 dark:hover:bg-purple-900 dark:hover:text-purple-200"
-          @click="logout"
+          @click="handleLogout"
         >
           <LogOut class="w-5 h-5" />
           <span>{{ t('Logout') }}</span>
@@ -58,12 +58,14 @@ import {
   LogOut,
   Notebook,
 } from "lucide-vue-next"
-import { useRoute } from "vue-router"
-const route = useRoute()
+import { useRoute, useRouter } from "vue-router"
 import { useUiStore } from "../stores/ui"
 import { useLocale } from "../useLocale"
 import { computed } from "vue"
+import { retrainService } from "../service/auth.service"
 
+const route = useRoute()
+const router = useRouter();
 const { t } = useLocale()
 const ui = useUiStore()
 
@@ -76,9 +78,13 @@ const menu = computed(() => [
   { path: "resources", label: t("resources"), icon: Box },
 ])
 
-// 🔑 Logout function
-const logout = () => {
-  ui.sidebarOpen = false
-  console.log("Chiqish tugmasi bosildi")
-}
+const handleLogout = async () => {
+  try {
+    await retrainService.logOut();
+    retrainService.logout();
+    router.push("/");
+  } catch (err) {
+    alert("Error during logout: " + (err instanceof Error ? err.message : err));
+  }
+};
 </script>

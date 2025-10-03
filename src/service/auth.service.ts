@@ -1,28 +1,24 @@
-import StorageService from "../service/storage.service";
-import apiClient from "../service/api.service";
+import axios from './axios';
+import StorageService from './storage.service';
+import StorageService from './storage.service';
 
-const AuthService = {
-  loginRequestToOneId(data: any) {
-    return apiClient.get(`/redirectUri?code=${data.code}&state=${data.state}`);
+
+export const retrainService = {
+  redirectUri(  code: string, state: string ) {
+    return axios.get(
+      `/retrain/redirectUri?code=${code}&state=${state}`
+    );
   },
 
-  logoutRequestToOneId() {
-    return apiClient.get(`/logOut`);
-  },
+    logout() {
+        StorageService.removeToken();
+        StorageService.removePermissions();
+        StorageService.removeLang();
+    },
 
-  getChallenge() {
-    return apiClient.get(`/frontend/challenge`);
-  },
-
-  logout() {
-    this.logoutRequestToOneId();
-    StorageService.removeToken();
-    StorageService.removeListener();
-    StorageService.removePermissions();
-    StorageService.removeUsername();
-    apiClient.removeHeader();
-    window.open(import.meta.env.VITE_BASE_URL, "_self");
-  }
+     logOut() {
+        return axios.get(`/retrain/logOut`);
+    },
 };
 
-export default AuthService;
+

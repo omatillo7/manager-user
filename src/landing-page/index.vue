@@ -2,17 +2,33 @@
   <div class="font-sans">
     <!-- Navbar -->
     <!-- Navbar -->
-    <header id="home" class="sticky top-0 z-50 bg-white shadow-sm border-y border-gray-200">
-      <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <header
+      id="home"
+      class="sticky top-0 z-50 bg-white shadow-sm border-y border-gray-200"
+    >
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4"
+      >
         <!-- Logo -->
         <div class="flex items-center gap-3">
-          <img @click="scrollToTop" src="../../src/assets/img/logo.png" alt="Logo" class="h-10 w-auto cursor-pointer" />
+          <img
+            @click="scrollToTop"
+            src="../../src/assets/img/logo.png"
+            alt="Logo"
+            class="h-10 w-auto cursor-pointer"
+          />
         </div>
 
         <!-- Menu (Desktop) -->
         <nav class="hidden md:flex items-center gap-12 text-gray-700 text-sm">
-          <a v-for="item in navItems" :key="item.id" :href="item.href" @click="setActive(item.id)"
-            class="hover:text-[#7a3de6]" :class="{ 'text-[#9657ff] font-semibold': activeLink === item.id }">
+          <a
+            v-for="item in navItems"
+            :key="item.id"
+            :href="item.href"
+            @click="setActive(item.id)"
+            class="hover:text-[#7a3de6]"
+            :class="{ 'text-[#9657ff] font-semibold': activeLink === item.id }"
+          >
             {{ t(item.label) }}
           </a>
         </nav>
@@ -24,25 +40,54 @@
           </div>
 
           <!-- Mobile Menu Button -->
-          <button class="md:hidden p-2 rounded hover:bg-gray-100" @click="isMenuOpen = !isMenuOpen">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path v-if="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16" />
-              <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          <button
+            class="md:hidden p-2 rounded hover:bg-gray-100"
+            @click="isMenuOpen = !isMenuOpen"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-gray-700"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                v-if="!isMenuOpen"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+              <path
+                v-else
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
 
           <!-- Desktop buttons -->
           <div class="hidden md:flex items-center gap-4">
             <HomeLanguageSelect />
-            <button
-              class="bg-[#9657ff] text-white px-4 py-1.5 rounded shadow hover:bg-[#7a3de6] flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" />
+            <a
+              target="_self"
+              href="https://sso.egov.uz/sso/oauth/Authorization.do?response_type=one_code&client_id=manager_uzedu_uz&redirect_uri=https://probniyretrain.uzedu.uz/auth/one-id&scope=manager_uzedu_uz&state=aTYPo5CG16JpBqg1k4Glu7bj"
+              class="bg-[#9657ff] text-white px-4 py-1.5 rounded shadow hover:bg-[#7a3de6] flex items-center gap-2"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z"
+                />
               </svg>
               {{ t("Login") }}
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -50,60 +95,123 @@
       <!-- Mobile Dropdown -->
       <!-- Mobile Dropdown (Sliding Sidebar) -->
       <transition name="slide-left">
-        <nav v-if="isMenuOpen" class="fixed inset-y-0 left-0 w-80 bg-white shadow-xl border-r border-gray-200 z-50 
-             flex flex-col px-6 py-6 space-y-6 transform transition-transform duration-300">
+        <nav
+          v-if="isMenuOpen"
+          class="fixed inset-y-0 left-0 w-80 bg-white shadow-xl border-r border-gray-200 z-50 flex flex-col px-6 py-6 space-y-6 transform transition-transform duration-300"
+        >
           <!-- Menu Items -->
-          <a href="#home" @click="activeSection = 'home'; isMenuOpen = false" :class="[
-            'block text-lg font-medium transition-colors',
-            activeSection === 'home' ? 'text-[#9657ff]' : 'text-gray-700 hover:text-[#9657ff]'
-          ]">{{ t('home') }}</a>
+          <a
+            href="#home"
+            @click="
+              activeSection = 'home';
+              isMenuOpen = false;
+            "
+            :class="[
+              'block text-lg font-medium transition-colors',
+              activeSection === 'home'
+                ? 'text-[#9657ff]'
+                : 'text-gray-700 hover:text-[#9657ff]',
+            ]"
+            >{{ t("home") }}</a
+          >
 
-          <a href="#news" @click="activeSection = 'news'; isMenuOpen = false" :class="[
-            'block text-lg font-medium transition-colors',
-            activeSection === 'news' ? 'text-[#9657ff]' : 'text-gray-700 hover:text-[#9657ff]'
-          ]">{{ t('news') }}</a>
+          <a
+            href="#news"
+            @click="
+              activeSection = 'news';
+              isMenuOpen = false;
+            "
+            :class="[
+              'block text-lg font-medium transition-colors',
+              activeSection === 'news'
+                ? 'text-[#9657ff]'
+                : 'text-gray-700 hover:text-[#9657ff]',
+            ]"
+            >{{ t("news") }}</a
+          >
 
-          <a href="#stats" @click="activeSection = 'stats'; isMenuOpen = false" :class="[
-            'block text-lg font-medium transition-colors',
-            activeSection === 'stats' ? 'text-[#9657ff]' : 'text-gray-700 hover:text-[#9657ff]'
-          ]">{{ t('stats') }}</a>
+          <a
+            href="#stats"
+            @click="
+              activeSection = 'stats';
+              isMenuOpen = false;
+            "
+            :class="[
+              'block text-lg font-medium transition-colors',
+              activeSection === 'stats'
+                ? 'text-[#9657ff]'
+                : 'text-gray-700 hover:text-[#9657ff]',
+            ]"
+            >{{ t("stats") }}</a
+          >
 
-          <a href="#links" @click="activeSection = 'links'; isMenuOpen = false" :class="[
-            'block text-lg font-medium transition-colors',
-            activeSection === 'links' ? 'text-[#9657ff]' : 'text-gray-700 hover:text-[#9657ff]'
-          ]">{{ t('links') }}</a>
+          <a
+            href="#links"
+            @click="
+              activeSection = 'links';
+              isMenuOpen = false;
+            "
+            :class="[
+              'block text-lg font-medium transition-colors',
+              activeSection === 'links'
+                ? 'text-[#9657ff]'
+                : 'text-gray-700 hover:text-[#9657ff]',
+            ]"
+            >{{ t("links") }}</a
+          >
 
           <!-- Button -->
           <div class="border-t border-gray-200 pt-4">
-            <button class="mt-2 bg-[#9657ff] text-white px-4 py-2 rounded shadow hover:bg-[#7a3de6] 
-                 flex items-center gap-2 w-full justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 16 16">
-                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" />
+            <a
+              target="_self"
+              href="https://sso.egov.uz/sso/oauth/Authorization.do?response_type=one_code&client_id=manager_uzedu_uz&redirect_uri=https://probniyretrain.uzedu.uz/auth/one-id&scope=manager_uzedu_uz&state=aTYPo5CG16JpBqg1k4Glu7bj"
+              @click="$router.push({ name: 'one-id' })"
+              class="mt-2 bg-[#9657ff] text-white px-4 py-2 rounded shadow hover:bg-[#7a3de6] flex items-center gap-2 w-full justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z"
+                />
               </svg>
               {{ t("Login") }}
-            </button>
+            </a>
           </div>
         </nav>
       </transition>
-
     </header>
 
     <!-- Hero Section -->
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center bg-gradient-to-r from-white via-white/90 to-transparent">
+    <section
+      class="relative min-h-screen flex items-center bg-gradient-to-r from-white via-white/90 to-transparent"
+    >
       <!-- Background Image -->
-      <div class="absolute inset-0 bg-cover bg-right md:bg-center" style="
+      <div
+        class="absolute inset-0 bg-cover bg-right md:bg-center"
+        style="
           background-image: url('https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg');
-        ">
-        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+        "
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"
+        ></div>
       </div>
 
       <!-- Content -->
-      <div class="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-6 px-6 py-16 items-center">
+      <div
+        class="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-6 px-6 py-16 items-center"
+      >
         <!-- Text -->
         <div class="space-y-6 font-[Helvetica Neue] italic">
-          <h2 class="text-2xl md:text-3xl font-serif font-bold leading-relaxed tracking-wide py-12"
-            style="margin-top: -200px;">
+          <h2
+            class="text-2xl md:text-3xl font-serif font-bold leading-relaxed tracking-wide py-12"
+            style="margin-top: -200px"
+          >
             <span class="text-[#9657ff]">{{ t("part1") }}</span>
             <span class="text-gray-800"> - {{ t("part2") }}</span>
           </h2>
@@ -129,9 +237,16 @@
 
         <!-- News List -->
         <div class="grid md:grid-cols-4 gap-6">
-          <div v-for="news in visibleNews" :key="news.id"
-            class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 flex flex-col">
-            <img :src="news.image" alt="news" class="rounded-lg mb-4 h-40 w-full object-cover" />
+          <div
+            v-for="news in visibleNews"
+            :key="news.id"
+            class="bg-white rounded-xl shadow hover:shadow-lg transition p-4 flex flex-col"
+          >
+            <img
+              :src="news.image"
+              alt="news"
+              class="rounded-lg mb-4 h-40 w-full object-cover"
+            />
             <h3 class="text-sm font-semibold mb-2 text-gray-700">
               {{ news.title }}
             </h3>
@@ -140,27 +255,40 @@
 
         <!-- Ko‘proq tugma -->
         <!-- Replace your old div with this -->
-        <div v-if="newsList.length > 4" class="mt-6 text-center flex items-center justify-center gap-2">
-          <button @click="showMore = !showMore"
+        <div
+          v-if="newsList.length > 4"
+          class="mt-6 text-center flex items-center justify-center gap-2"
+        >
+          <button
+            @click="showMore = !showMore"
             class="px-3 gap-2 py-2 bg-[#9657ff] flex d-flex text-white rounded hover:bg-[#7a3de6] transition"
-            aria-expanded="false">
+            aria-expanded="false"
+          >
             {{ showMore ? t("close") : t("allNews") }}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
               class="w-6 h-6 transform transition-transform duration-300 text-[#ffff]"
-              :class="showMore ? 'rotate-180' : ''" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              :class="showMore ? 'rotate-180' : ''"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
               <path d="m6 9 6 6 6-6" />
             </svg>
           </button>
         </div>
-
       </div>
     </section>
 
-
     <!-- statistika -->
     <section id="stats" class="bg-gray-50 py-16 font-[Helvetica Neue]">
-      <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-12">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-12"
+      >
         <!-- Chap taraf: statistika -->
         <div class="w-full lg:w-1/2">
           <h2 class="text-3xl font-serif font-bold mb-10 text-[#9657ff] italic">
@@ -170,8 +298,13 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <!-- Stat itemlar -->
             <div
-              class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition">
-              <img src="../assets/img/application.png" alt="icon" class="w-16 h-16" />
+              class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition"
+            >
+              <img
+                src="../assets/img/application.png"
+                alt="icon"
+                class="w-16 h-16"
+              />
               <div class="text-[#9657ff] text-2xl font-bold mt-3">
                 {{ stats?.totalSeen ?? "..." }}
               </div>
@@ -181,8 +314,13 @@
             </div>
 
             <div
-              class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition">
-              <img src="../assets/img/accepted.png" alt="icon" class="w-14 h-14" />
+              class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition"
+            >
+              <img
+                src="../assets/img/accepted.png"
+                alt="icon"
+                class="w-14 h-14"
+              />
               <div class="text-[#9657ff] text-2xl font-bold mt-3">
                 {{ stats?.totalAccepted ?? "..." }}
               </div>
@@ -192,8 +330,13 @@
             </div>
 
             <div
-              class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition">
-              <img src="../assets/img/rejected.png" alt="icon" class="w-14 h-14" />
+              class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition"
+            >
+              <img
+                src="../assets/img/rejected.png"
+                alt="icon"
+                class="w-14 h-14"
+              />
               <div class="text-[#9657ff] text-2xl font-bold mt-3">
                 {{ stats?.totalCancelled ?? "..." }}
               </div>
@@ -203,8 +346,13 @@
             </div>
 
             <div
-              class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition">
-              <img src="../assets/img/contract.png" alt="icon" class="w-14 h-14" />
+              class="bg-white rounded-xl p-6 flex flex-col items-center text-center shadow hover:shadow-lg hover:-translate-y-1 transition"
+            >
+              <img
+                src="../assets/img/contract.png"
+                alt="icon"
+                class="w-14 h-14"
+              />
               <div class="text-[#9657ff] text-2xl font-bold mt-3">
                 {{ stats?.totalContract ?? "..." }}
               </div>
@@ -217,28 +365,50 @@
 
         <!-- O'ng taraf: rasm -->
         <div class="w-full lg:w-1/2 flex justify-center">
-          <img src="../assets/img/map.png" alt="Map image" class="max-w-full h-auto mt-20" />
+          <img
+            src="../assets/img/map.png"
+            alt="Map image"
+            class="max-w-full h-auto mt-20"
+          />
         </div>
       </div>
     </section>
     <!-- Carousel -->
     <section id="links" class="py-12 bg-gray-50 border-y border-gray-300">
       <div class="px-4 sm:px-6 md:px-8">
-        <h2 class="text-2xl sm:text-3xl font-serif font-bold italic mb-8 text-center text-[#9657ff]">
+        <h2
+          class="text-2xl sm:text-3xl font-serif font-bold italic mb-8 text-center text-[#9657ff]"
+        >
           {{ t("usefull_links") }}
         </h2>
 
         <div class="relative">
           <!-- Carousel Wrapper -->
-          <div ref="carousel"
+          <div
+            ref="carousel"
             class="flex overflow-x-auto scroll-smooth space-x-4 sm:space-x-6 no-scrollbar cursor-grab active:cursor-grabbing select-none snap-x snap-mandatory px-6 sm:px-0"
-            @mousedown="startDrag" @mousemove="onDrag" @mouseup="stopDrag" @mouseleave="stopDrag"
-            @touchstart="startTouch" @touchmove="onTouch" @touchend="stopTouch">
-            <div v-for="(item, index) in cards" :key="index" @click="openLink(item.href)"
-              class="cursor-pointer flex-shrink-0 w-[85%] sm:w-[320px] md:w-[380px] lg:w-[420px] snap-center bg-white border border-gray-200 rounded-lg shadow flex items-center gap-3 sm:gap-4 p-3 sm:p-4 h-[110px] sm:h-[130px] md:h-[120px] lg:h-[100px] transition-transform duration-300">
-              <img :src="item.img" :alt="t(item.title)"
-                class="w-[50px] h-[50px] sm:w-[50px] sm:h-[50px] md:w-[60px] md:h-[60px] object-contain" />
-              <p class="text-[12px] sm:text-[13px] md:text-[14px] text-gray-700 leading-snug">
+            @mousedown="startDrag"
+            @mousemove="onDrag"
+            @mouseup="stopDrag"
+            @mouseleave="stopDrag"
+            @touchstart="startTouch"
+            @touchmove="onTouch"
+            @touchend="stopTouch"
+          >
+            <div
+              v-for="(item, index) in cards"
+              :key="index"
+              @click="openLink(item.href)"
+              class="cursor-pointer flex-shrink-0 w-[85%] sm:w-[320px] md:w-[380px] lg:w-[420px] snap-center bg-white border border-gray-200 rounded-lg shadow flex items-center gap-3 sm:gap-4 p-3 sm:p-4 h-[110px] sm:h-[130px] md:h-[120px] lg:h-[100px] transition-transform duration-300"
+            >
+              <img
+                :src="item.img"
+                :alt="t(item.title)"
+                class="w-[50px] h-[50px] sm:w-[50px] sm:h-[50px] md:w-[60px] md:h-[60px] object-contain"
+              />
+              <p
+                class="text-[12px] sm:text-[13px] md:text-[14px] text-gray-700 leading-snug"
+              >
                 {{ t(item.title) }}
               </p>
             </div>
@@ -251,20 +421,29 @@
     <section class="py-16 px-4 bg-gray-50 transition-colors duration-300">
       <div class="max-w-6xl mx-auto px-6">
         <!-- Sarlavha -->
-        <h1 class="text-3xl sm:text-3xl font-serif font-bold italic text-[#9657ff] mb-10 text-center">
+        <h1
+          class="text-3xl sm:text-3xl font-serif font-bold italic text-[#9657ff] mb-10 text-center"
+        >
           {{ t("faq") }}
         </h1>
 
         <!-- FAQ ro'yxati -->
         <div>
-          <div v-for="(item, index) in faqList" :key="index"
-            class="mb-4 rounded-2xl bg-white shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-100">
+          <div
+            v-for="(item, index) in faqList"
+            :key="index"
+            class="mb-4 rounded-2xl bg-white shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl border border-gray-100"
+          >
             <!-- Savol -->
-            <button @click="toggle(index)"
-              class="w-full px-6 py-5 flex justify-between items-center text-left text-lg sm:text-xl font-medium text-gray-800 transition-colors duration-300">
+            <button
+              @click="toggle(index)"
+              class="w-full px-6 py-5 flex justify-between items-center text-left text-lg sm:text-xl font-medium text-gray-800 transition-colors duration-300"
+            >
               <span class="flex items-center gap-3">
-                <span class="text-xl font-bold text-[#9657ff] transition-transform duration-300"
-                  :class="{ 'rotate-180': activeIndex === index }">
+                <span
+                  class="text-xl font-bold text-[#9657ff] transition-transform duration-300"
+                  :class="{ 'rotate-180': activeIndex === index }"
+                >
                   {{ activeIndex === index ? "+" : "-" }}
                 </span>
                 <span>{{ item.question }}</span>
@@ -275,7 +454,8 @@
             <transition @enter="enter" @leave="leave">
               <div v-show="activeIndex != index" class="overflow-hidden">
                 <div
-                  class="px-6 pb-5 text-gray-600 text-[15px] leading-relaxed italic bg-gray-50 border-t border-gray-100">
+                  class="px-6 pb-5 text-gray-600 text-[15px] leading-relaxed italic bg-gray-50 border-t border-gray-100"
+                >
                   {{ item.answer }}
                 </div>
               </div>
@@ -287,11 +467,17 @@
 
     <!-- Footer -->
     <footer class="bg-[#251e42] text-white text-sm px-4 py-12 md:px-12">
-      <div class="max-w-7xl mx-auto grid gap-12 sm:gap-16 md:gap-24 grid-cols-1 md:grid-cols-4">
+      <div
+        class="max-w-7xl mx-auto grid gap-12 sm:gap-16 md:gap-24 grid-cols-1 md:grid-cols-4"
+      >
         <!-- Maktabgacha va maktab taʼlimi vazirligi -->
         <div class="space-y-2">
           <div class="flex items-center gap-2">
-            <img src="../../src/assets/img/header_logo.svg" alt="Logo" class="w-40 md:w-full object-contain" />
+            <img
+              src="../../src/assets/img/header_logo.svg"
+              alt="Logo"
+              class="w-40 md:w-full object-contain"
+            />
           </div>
           <p class="text-white/80 text-sm">
             {{ t("title3") }}
@@ -301,7 +487,11 @@
         <!-- Avloni instituti -->
         <div class="space-y-2">
           <div class="flex items-start gap-2">
-            <img src="../assets/img/uzeduen.svg" alt="" class="w-40 md:w-full object-contain">
+            <img
+              src="../assets/img/uzeduen.svg"
+              alt=""
+              class="w-40 md:w-full object-contain"
+            />
             <!-- <img src="../assets/img/uzeduen.svg" alt="" class="w-40 md:w-full object-contain">
             <img src="../assets/img/uzeduen.svg" alt="" class="w-40 md:w-full object-contain"> -->
             <!-- <img src="../../src/assets/img/avloniy.png" alt="Avloni Logo" class="w-12 h-12 flex-shrink-0" />
@@ -338,22 +528,39 @@
           <p class="font-semibold">{{ t("Contact") }}</p>
           <p class="text-white/80">+998 71 202 09 09</p>
           <p>
-            <a href="mailto:info@uzedu.uz" class="hover:underline text-white/80">info@uzedu.uz</a>
+            <a href="mailto:info@uzedu.uz" class="hover:underline text-white/80"
+              >info@uzedu.uz</a
+            >
           </p>
         </div>
       </div>
 
       <div
-        class="max-w-7xl mx-auto border-t border-white/20 mt-8 pt-4 flex flex-col md:flex-row justify-between items-center text-xs text-white/50 gap-2 md:gap-0">
+        class="max-w-7xl mx-auto border-t border-white/20 mt-8 pt-4 flex flex-col md:flex-row justify-between items-center text-xs text-white/50 gap-2 md:gap-0"
+      >
         <p>© {{ t("title1") }}</p>
         <p>@uzedu</p>
       </div>
     </footer>
 
-    <button v-show="showScrollTop" @click="scrollToTop"
-      class="fixed bottom-6 right-6 bg-[#9657ff] text-white p-3 rounded-full shadow-lg hover:bg-[#7a3de6] transition">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    <button
+      v-show="showScrollTop"
+      @click="scrollToTop"
+      class="fixed bottom-6 right-6 bg-[#9657ff] text-white p-3 rounded-full shadow-lg hover:bg-[#7a3de6] transition"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 15l7-7 7 7"
+        />
       </svg>
     </button>
   </div>
@@ -438,32 +645,31 @@ function toggle(index: number) {
 
 const cards = ref([
   {
-    title: 'kitobuz',
-    href: 'http://kitob.uz',
-    img: 'https://uzedu.uz/uploads/2021/09/cXc8OOZLrpuhFYRXvNWJQ5GoYOeM88E6.jpg',
+    title: "kitobuz",
+    href: "http://kitob.uz",
+    img: "https://uzedu.uz/uploads/2021/09/cXc8OOZLrpuhFYRXvNWJQ5GoYOeM88E6.jpg",
   },
   {
-    title: 'data_gov_uz',
+    title: "data_gov_uz",
     href: "http://data.gov.uz",
     img: "https://uzedu.uz/uploads/2021/09/1SO_XkcIAlylxxP3frNdOk3Zi-InN7i2.jpg",
   },
   {
-    title: 'constitution_uz',
+    title: "constitution_uz",
     href: "https://constitution.uz",
     img: "https://uzedu.uz/uploads/2021/09/HtHyhPqDo4iM8wByOjzbFdsRieQLuBnv.jpg",
   },
   {
-    title: 'strategy_uz',
+    title: "strategy_uz",
     href: "https://strategy.uz/",
     img: "https://uzedu.uz/uploads/2022/06/mEPUPAMz2RMOw1DCqY-AlFV03hPzTgeV.jpg",
   },
   {
-    title: 'lex_uz',
+    title: "lex_uz",
     href: "https://lex.uz/uz/",
     img: "https://uzedu.uz/uploads/2022/06/tDoD07ZpAtOMsYNJAQdrDlZ7OsHUygKC.jpg",
   },
 ]);
-
 
 const openLink = (href) => {
   if (href) window.open(href, "_blank"); // yangi tabda ochiladi
@@ -551,7 +757,6 @@ const restartAutoScroll = () => {
   }, 3000);
 };
 </script>
-
 
 <style>
 .fade-enter-active,
