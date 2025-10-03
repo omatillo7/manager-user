@@ -102,7 +102,8 @@
       <div class="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-6 px-6 py-16 items-center">
         <!-- Text -->
         <div class="space-y-6 font-[Helvetica Neue] italic">
-          <h2 class="text-2xl md:text-3xl font-serif font-bold leading-relaxed tracking-wide py-12 -mt-20">
+          <h2 class="text-2xl md:text-3xl font-serif font-bold leading-relaxed tracking-wide py-12"
+            style="margin-top: -200px;">
             <span class="text-[#9657ff]">{{ t("part1") }}</span>
             <span class="text-gray-800"> - {{ t("part2") }}</span>
           </h2>
@@ -141,14 +142,15 @@
         <!-- Replace your old div with this -->
         <div v-if="newsList.length > 4" class="mt-6 text-center flex items-center justify-center gap-2">
           <button @click="showMore = !showMore"
-            class="px-3 gap-2 py-2 bg-[#9657ff] flex d-flex text-white rounded hover:bg-[#7a3de6] transition" aria-expanded="false">
+            class="px-3 gap-2 py-2 bg-[#9657ff] flex d-flex text-white rounded hover:bg-[#7a3de6] transition"
+            aria-expanded="false">
             {{ showMore ? t("close") : t("allNews") }}
-             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-            class="w-6 h-6 transform transition-transform duration-300 text-[#ffff]"
-            :class="showMore ? 'rotate-180' : ''" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="m6 9 6 6 6-6" />
-          </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              class="w-6 h-6 transform transition-transform duration-300 text-[#ffff]"
+              :class="showMore ? 'rotate-180' : ''" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
           </button>
         </div>
 
@@ -233,11 +235,11 @@
             @mousedown="startDrag" @mousemove="onDrag" @mouseup="stopDrag" @mouseleave="stopDrag"
             @touchstart="startTouch" @touchmove="onTouch" @touchend="stopTouch">
             <div v-for="(item, index) in cards" :key="index" @click="openLink(item.href)"
-              class=" cursor-pointer flex-shrink-0 w-[85%] sm:w-[320px] md:w-[380px] lg:w-[420px] snap-center bg-white border border-gray-200 rounded-lg shadow flex items-center gap-3 sm:gap-4 p-3 sm:p-4 h-[110px] sm:h-[130px] md:h-[120px] lg:h-[100px] transition-transform duration-300">
-              <img :src="item.img" :alt="item.title"
+              class="cursor-pointer flex-shrink-0 w-[85%] sm:w-[320px] md:w-[380px] lg:w-[420px] snap-center bg-white border border-gray-200 rounded-lg shadow flex items-center gap-3 sm:gap-4 p-3 sm:p-4 h-[110px] sm:h-[130px] md:h-[120px] lg:h-[100px] transition-transform duration-300">
+              <img :src="item.img" :alt="t(item.title)"
                 class="w-[50px] h-[50px] sm:w-[50px] sm:h-[50px] md:w-[60px] md:h-[60px] object-contain" />
               <p class="text-[12px] sm:text-[13px] md:text-[14px] text-gray-700 leading-snug">
-                {{ item.title }}
+                {{ t(item.title) }}
               </p>
             </div>
           </div>
@@ -435,12 +437,33 @@ function toggle(index: number) {
 }
 
 const cards = ref([
-  { title: "Respublika bolalar kitob xonasi", href: "http://kitob.uz", img: "https://uzedu.uz/uploads/2021/09/cXc8OOZLrpuhFYRXvNWJQ5GoYOeM88E6.jpg" },
-  { title: "O`zbekiston Respublikasi ochiq axborot portali", href: "http://data.gov.uz", img: "https://uzedu.uz/uploads/2021/09/1SO_XkcIAlylxxP3frNdOk3Zi-InN7i2.jpg" },
-  { title: "O`zbekiston Respublikasi Konstitutsiyasi", href: "https://constitution.uz", img: "https://uzedu.uz/uploads/2021/09/HtHyhPqDo4iM8wByOjzbFdsRieQLuBnv.jpg" },
-  { title: "Taraqqiyot strategiyasi markazi", href: "https://strategy.uz/", img: "https://uzedu.uz/uploads/2022/06/mEPUPAMz2RMOw1DCqY-AlFV03hPzTgeV.jpg" },
-  { title: "O`zbekiston Respublikasi qonun hujjatlari ma`lumotlari milliy bazasi", href: "https://lex.uz/uz/", img: "https://uzedu.uz/uploads/2022/06/tDoD07ZpAtOMsYNJAQdrDlZ7OsHUygKC.jpg" },
+  {
+    title: 'kitobuz',
+    href: 'http://kitob.uz',
+    img: 'https://uzedu.uz/uploads/2021/09/cXc8OOZLrpuhFYRXvNWJQ5GoYOeM88E6.jpg',
+  },
+  {
+    title: 'data_gov_uz',
+    href: "http://data.gov.uz",
+    img: "https://uzedu.uz/uploads/2021/09/1SO_XkcIAlylxxP3frNdOk3Zi-InN7i2.jpg",
+  },
+  {
+    title: 'constitution_uz',
+    href: "https://constitution.uz",
+    img: "https://uzedu.uz/uploads/2021/09/HtHyhPqDo4iM8wByOjzbFdsRieQLuBnv.jpg",
+  },
+  {
+    title: 'strategy_uz',
+    href: "https://strategy.uz/",
+    img: "https://uzedu.uz/uploads/2022/06/mEPUPAMz2RMOw1DCqY-AlFV03hPzTgeV.jpg",
+  },
+  {
+    title: 'lex_uz',
+    href: "https://lex.uz/uz/",
+    img: "https://uzedu.uz/uploads/2022/06/tDoD07ZpAtOMsYNJAQdrDlZ7OsHUygKC.jpg",
+  },
 ]);
+
 
 const openLink = (href) => {
   if (href) window.open(href, "_blank"); // yangi tabda ochiladi

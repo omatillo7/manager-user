@@ -123,6 +123,12 @@ export const messages = {
     faq: "Tez-tez so'raladigan savollar (FAQ)",
     allNews: "Barcha yangiliklar",
     close: "Yopish",
+    kitobuz: "Respublika bolalar kitob xonasi",
+    data_gov_uz: "O`zbekiston Respublikasi ochiq axborot portali",
+    constitution_uz: "O`zbekiston Respublikasi Konstitutsiyasi",
+    strategy_uz: "Taraqqiyot strategiyasi markazi",
+    lex_uz:
+      "O`zbekiston Respublikasi qonun hujjatlari ma`lumotlari milliy bazasi",
   },
   ru: {
     personalInfo: "Личные данные",
@@ -246,6 +252,11 @@ export const messages = {
     faq: "Часто задаваемые вопросы (FAQ)",
     allNews: "Все новости",
     close: "Закрыть",
+    kitobuz: "Республиканская детская библиотека",
+    data_gov_uz: "Портал открытых данных Республики Узбекистан",
+    constitution_uz: "Конституция Республики Узбекистан",
+    strategy_uz: "Центр стратегии развития",
+    lex_uz: "Национальная база данных законов Республики Узбекистан",
   },
   en: {
     personalInfo: "Personal Information",
@@ -369,5 +380,11 @@ export const messages = {
     faq: "Often asked questions (FAQ)",
     allNews: "All news",
     close: "Close",
+    kitobuz: "Republic Children's Library",
+    data_gov_uz: "Open Data Portal of the Republic of Uzbekistan",
+    constitution_uz: "Constitution of the Republic of Uzbekistan",
+    strategy_uz: "Development Strategy Center",
+    lex_uz:
+      "National Database of Legislative Acts of the Republic of Uzbekistan",
   },
 };
