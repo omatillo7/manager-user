@@ -15,7 +15,9 @@ async function handleOneIDCallback() {
 
     try {
         const response = await retrainService.redirectUri(code, state);
-        const token = response.data.access_token;
+        console.log(response,"ssssss");
+        
+        const token = response.data.token;
         const perms = response.data.perms;
         const lang = response.data.lang || 'uz';
 
