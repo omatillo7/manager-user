@@ -284,7 +284,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#0C233C] text-white text-sm px-4 py-12 md:px-12">
+    <footer class="bg-[#251e42] text-white text-sm px-4 py-12 md:px-12">
       <div class="max-w-7xl mx-auto grid gap-12 sm:gap-16 md:gap-24 grid-cols-1 md:grid-cols-4">
         <!-- Maktabgacha va maktab taʼlimi vazirligi -->
         <div class="space-y-2">
