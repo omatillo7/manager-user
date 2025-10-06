@@ -121,13 +121,14 @@
             type="text"
             placeholder="+998 (99) 999-99-99"
             v-model="phone"
-            v-maska="'+998 (##) ###-##-##'"
+            maskType="phone"
           />
           <BaseInput
             :label="t('email')"
             type="email"
             placeholder="test@gmail.com"
             v-model="email"
+            validation="gmail"
           />
           <BaseSelect
             :label="t('region')"
