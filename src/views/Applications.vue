@@ -60,6 +60,20 @@
 import { Calendar, Users } from "lucide-vue-next";
 import { useLocale } from "../useLocale"
 const { t } = useLocale()
+import { onMounted, ref } from "vue";
+import { infoService } from "../service/info.service";
+
+const Data = ref(null);
+
+onMounted(() => {
+  infoService.ownList("", "SEND,SEEN,ACCEPTED,CANCELLED,CONTRACT", "RETRAINING")
+    .then(res => {
+      Data.value = res.data
+    })
+    .catch(err => {
+      console.error('❌ Xato:', err)
+    })
+})
 
 const applications = [
   {

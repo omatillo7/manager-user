@@ -1,6 +1,5 @@
 import axios from './axios';
 import StorageService from './storage.service';
-import StorageService from './storage.service';
 
 
 export const retrainService = {

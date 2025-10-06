@@ -23,7 +23,7 @@
           :to="item.path"
           class="flex items-center gap-3 px-4 py-3 rounded-lg transition-colors duration-200"
           :class="
-            $route.path === item.path
+            $route.path === `/admin/${item.path}`
               ? 'bg-gray-100 text-black dark:bg-[#0F1015] dark:text-white'
               : 'hover:bg-gray-200 hover:text-black dark:hover:bg-[#0F1015] dark:hover:text-white'
           "

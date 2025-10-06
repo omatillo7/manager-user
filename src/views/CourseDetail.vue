@@ -2,7 +2,7 @@
   <div>
     <!-- Back -->
     <div class="flex items-center gap-2 cursor-pointer mb-4">
-      <button @click="$router.back()" class="p-2 rounded-full 
+      <button class="p-2 rounded-full 
          bg-gray-200 hover:bg-gray-300 
          dark:bg-gray-700 dark:hover:bg-gray-600 
          transition">

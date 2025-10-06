@@ -74,37 +74,38 @@
             class="w-[90px] h-[110px] object-cover rounded-md shadow"
           />
           <h1 class="font-bold text-2xl leading-snug">
+            <!-- {{ Data.fullName }} <br /> -->
             JUMAQULOV <br />
             BOBURJON <br />
             SHERALI O‘G‘LI
           </h1>
         </div>
-        <div class="space-y-3 text-sm">
+        <div class="space-y-3 text-sm" v-if="Data">
           <div>
             <p class="text-gray-500 dark:text-gray-400">
               {{ t("passport_number") }}
             </p>
-            <p class="font-medium">AB 6827330</p>
+            <p class="font-medium">{{ Data.passportSerial }}  {{ Data.passportNumber }}</p>
           </div>
           <div>
             <p class="text-gray-500 dark:text-gray-400">{{ t("jshshir") }}</p>
-            <p class="font-medium">12345678910112</p>
+            <p class="font-medium">{{ Data.inps ? Data.inps : '-' }}</p>
           </div>
           <div>
             <p class="text-gray-500 dark:text-gray-400">
               {{ t("birth_date") }}
             </p>
-            <p class="font-medium">24-09-2000</p>
+            <p class="font-medium">{{ Data.birthday ? Data.birthday : '-' }}</p>
           </div>
           <div>
             <p class="text-gray-500 dark:text-gray-400">
               {{ t("expiry_date") }}
             </p>
-            <p class="font-medium">12.05.2029</p>
+            <p class="font-medium">{{ Data.passportEndDate ? Data.passportEndDate : '-' }}</p>
           </div>
           <div>
             <p class="text-gray-500 dark:text-gray-400">{{ t("issued_by") }}</p>
-            <p class="font-medium">Farg‘ona viloyati Qo‘qon shahar IIB</p>
+            <p class="font-medium">{{ Data.passportGivenWho ? Data.passportGivenWho : '-' }}</p>
           </div>
         </div>
       </div>
@@ -256,25 +257,20 @@ import {
 import { ref, onMounted } from "vue";
 import { useLocale } from "../useLocale";
 import ConfirmModal from "../components/ConfirmModal.vue"; // shu fa
-import { infoService } from '../service/info.service';
+import { infoService } from "../service/info.service";
 const { t } = useLocale();
 
-
-
-const loadInfo = async () => {
-  try {
-    const res = await infoService.getById(35408);
-    const item = res.data;
-    console.log('Listener data:', res.data);
-  } catch (err) {
-    console.error('Error fetching listener:', err);
-  }
-};
+const Data = ref(null);
 
 onMounted(() => {
-  loadInfo();
-});
-
+  infoService.getById(45441)
+    .then(res => {
+      Data.value = res.data
+    })
+    .catch(err => {
+      console.error('❌ Xato:', err)
+    })
+})
 
 const tabs = [
   { key: "personal", label: "personal_info", icon: User },
