@@ -52,12 +52,12 @@ const routes = [
         component: import("../views/Resources.vue"),
       },
       {
-        path: "profile/education/add",
+        path: "add",
         name: "admin-educationadd",
         component: import("../views/EducationAdd.vue"),
       },
       {
-        path: "profile/education/edit",
+        path: "edit",
         name: "admin-educationedit",
         component: import("../views/EducationAdd.vue"),
         props: true,
