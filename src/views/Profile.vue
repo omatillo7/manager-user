@@ -128,7 +128,6 @@
             type="email"
             placeholder="test@gmail.com"
             v-model="email"
-            validation="gmail"
           />
           <BaseSelect
             :label="t('region')"

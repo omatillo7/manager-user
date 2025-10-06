@@ -1,7 +1,6 @@
 <template>
   <div
-    class="absolute inset-0 z-10 flex flex-col items-center justify-center 
-           bg-white/70 dark:bg-gray-900/70 rounded-lg backdrop-blur-sm"
+    class="absolute inset-0 z-10 flex flex-col items-center justify-center"
   >
     <!-- Spinner -->
     <div

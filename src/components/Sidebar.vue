@@ -63,6 +63,7 @@ import { useUiStore } from "../stores/ui"
 import { useLocale } from "../useLocale"
 import { computed } from "vue"
 import { retrainService } from "../service/auth.service"
+import StorageService from "../service/storage.service"
 
 const route = useRoute()
 const router = useRouter();
@@ -83,6 +84,7 @@ const handleLogout = async () => {
     await retrainService.logOut();
     retrainService.logout();
     router.push("/");
+    StorageService.removeToken();
   } catch (err) {
     alert("Error during logout: " + (err instanceof Error ? err.message : err));
   }

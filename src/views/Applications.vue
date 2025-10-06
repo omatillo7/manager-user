@@ -1,8 +1,9 @@
 <template>
   <div class="space-y-4">
     <h2 class="text-xl font-bold mb-4">{{ t("Applications") }}</h2>
-
+    <Loader v-if="!Data" />
     <div
+      v-if="Data"
       v-for="app in applications"
       :key="app.id"
       class="p-4 rounded-lg border bg-gray-50 text-gray-900 border-gray-300 dark:bg-[#191c24] dark:text-gray-200 dark:border-gray-700 transition-colors duration-500 hover:border-purple-500 dark:hover:border-purple-400 shadow-sm flex flex-col gap-3"
@@ -62,6 +63,7 @@ import { useLocale } from "../useLocale"
 const { t } = useLocale()
 import { onMounted, ref } from "vue";
 import { infoService } from "../service/info.service";
+import Loader from "../../src/components/Loader.vue";
 
 const Data = ref(null);
 
