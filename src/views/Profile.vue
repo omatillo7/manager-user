@@ -47,14 +47,14 @@
         </BaseButton>
 
         <!-- Qo'shish -->
-        <BaseButton
+        <!-- <BaseButton
           @click="$router.push({ name: 'admin-educationadd' })"
           variant="outline"
           class="flex items-center justify-center gap-2"
         >
           <Plus class="w-4 h-4" />
           <span>{{ t("add") }}</span>
-        </BaseButton>
+        </BaseButton> -->
       </div>
     </div>
 
@@ -170,16 +170,14 @@
           <Calendar class="w-3.5 h-3.5" />
           <span>{{ edu.start }} / {{ edu.end }}</span>
         </div>
-        <div class="flex justify-end gap-1.5 -mt-[20px]">
-          <!-- Pencil button -->
+        <!-- <div class="flex justify-end gap-1.5 -mt-[20px]">
           <div class="relative group">
             <button
-              @click="$router.push(`/admin/profile/education/edit`)"
+              @click="$router.push(`/admin/edit`)"
               class="p-2 rounded-md bg-gray-200 text-indigo-500 hover:bg-gray-300 dark:bg-[#0F1015] dark:hover:bg-[#242730]"
             >
               <Pencil class="w-4 h-4" />
             </button>
-            <!-- Tooltip -->
             <span
               class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md text-xs text-white bg-gray-900 opacity-0 group-hover:opacity-100 transition pointer-events-none"
             >
@@ -187,9 +185,7 @@
             </span>
           </div>
 
-          <!-- Trash button -->
           <div class="relative group">
-            <!-- Delete button -->
             <button
               @click="showDelete = true"
               class="p-2 rounded-md bg-gray-200 text-red-500 hover:bg-gray-300 dark:bg-[#0F1015] dark:hover:bg-[#242730]"
@@ -197,14 +193,11 @@
               <Trash class="w-4 h-4" />
             </button>
 
-            <!-- Tooltip -->
             <span
               class="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded-md text-xs text-white bg-gray-900 opacity-0 group-hover:opacity-100 transition pointer-events-none"
             >
               {{ t("delete") }}
             </span>
-
-            <!-- Confirm Modal -->
             <ConfirmModal
               v-model="showDelete"
               :title="t('confirm_delete_title')"
@@ -213,7 +206,7 @@
               @confirm="deleteItem"
             />
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -263,7 +256,7 @@ const { t } = useLocale();
 const Data = ref(null);
 
 onMounted(() => {
-  infoService.getById(45441)
+  infoService.getById(45388)
     .then(res => {
       Data.value = res.data
     })
